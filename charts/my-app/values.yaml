@@ -1,0 +1,27 @@
+replicaCount: 2
+
+image:
+  repository: 172.25.87.31:80/library/my-app
+  tag: "v1"
+  pullPolicy: IfNotPresent
+
+imagePullSecrets:
+  - name: harbor-secret
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: false
+  className: nginx
+  host: my-app.example.com
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 250m
+    memory: 256Mi
