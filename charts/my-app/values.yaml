@@ -1,6 +1,6 @@
 replicaCount: 2
 image:
-  repository: //my-app
+  repository: {DOLLAR}{HARBOR_REGISTRY}/{DOLLAR}{HARBOR_PROJECT}/my-app
   tag: "v9"
   pullPolicy: IfNotPresent
 imagePullSecrets:
