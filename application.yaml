@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/XueNHZ/my-k8s-app-deploy.git
+    repoURL: ${DEPLOY_REPO_URL}
     targetRevision: main
     path: charts/my-app
     helm:

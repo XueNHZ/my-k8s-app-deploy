@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: 172.25.87.31:80/library/my-app
+  repository: ${HARBOR_REGISTRY}/${HARBOR_PROJECT}/my-app
   tag: "v1"
   pullPolicy: IfNotPresent
 
