@@ -41,7 +41,7 @@ bootstrap 之后，CI 只改 `values.yaml` 的 `image.tag`，`image.repository` 
     kubectl -n argocd patch application my-app --type=merge -p \
       '{"spec":{"source":{"helm":{"parameters":[{"name":"image.repository","value":"'"$HARBOR_REGISTRY"'/'"$HARBOR_PROJECT"'/my-app"}]}}}}'
 
-/tmp 下的渲染文件不要提交到 Git。CI 从不 apply Application，也不做 envsubst —— 这是设计。
+/tmp 下的渲染文件不要提交到 Git。CI 从不 apply Application，也不做 envsubst 。
 
 ## Harbor imagePullSecret
 
