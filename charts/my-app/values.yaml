@@ -1,8 +1,6 @@
 replicaCount: 2
 image:
-  # 占位符：真实仓库地址不入库（本仓库公开）。
-  # 真实值由 Argo CD Application 的 spec.source.helm.parameters 注入 image.repository 覆盖。
-  repository: ${HARBOR_REGISTRY}/${HARBOR_PROJECT}/my-app
+  repository: harbor.local:80/library/my-app
   tag: "v11"
   pullPolicy: IfNotPresent
 imagePullSecrets:
@@ -11,7 +9,6 @@ service:
   type: ClusterIP
   port: 80
   targetPort: 8080
-# 注意：templates/ 下没有 ingress.yaml，这段当前不会渲染成任何资源
 ingress:
   enabled: false
   className: nginx
