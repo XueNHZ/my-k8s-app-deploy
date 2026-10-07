@@ -4,12 +4,12 @@ metadata:
   name: test-pull
   namespace: my-app
 spec:
-  # 引用上面创建的拉取凭证
+  # 引用集群中已创建的 harbor-secret
   imagePullSecrets:
     - name: harbor-secret
   containers:
     - name: test
-      # 替换成你真实推送的镜像地址和 tag
-      image: harbor.local:80/library/my-app:v11
+      # 占位符：apply 前用 envsubst 渲染，或直接替换成真实镜像地址
+      image: ${HARBOR_REGISTRY}/${HARBOR_PROJECT}/my-app:${IMAGE_TAG}
       imagePullPolicy: IfNotPresent
       command: ["sh", "-c", "sleep 3600"]
