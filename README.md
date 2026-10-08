@@ -34,10 +34,9 @@ Argo CD 不会自动读取 shell 环境变量，请先渲染模板。
 
     envsubst < charts/my-app/values.yaml > /tmp/values.rendered.yaml
     cat /tmp/values.rendered.yaml
- HEAD
+
 /tmp 下的渲染文件不要提交到 Git。CI 从不 apply Application，也不做 envsubst 。
 
- 268a675 (Revert "chore: drop internal IPs and duplicated files, use placeholders for image repo")
 
 ## Harbor imagePullSecret
 
