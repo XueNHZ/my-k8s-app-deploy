@@ -1,7 +1,7 @@
 replicaCount: 2
 image:
   repository: harbor.local:80/library/my-app
-  tag: "v11"
+  tag: "v17"
   pullPolicy: IfNotPresent
 imagePullSecrets:
   - name: harbor-secret
